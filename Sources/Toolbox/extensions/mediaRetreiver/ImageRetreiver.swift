@@ -18,9 +18,9 @@ public extension Reactive where Base: UIImageView {
         
         return Observable<Void>.create { (subscriber) -> Disposable in
 
-            var options: KingfisherOptionsInfo =
-                [.transition(.fade(0.5)),
-                 .onFailureImage(placeholder)]
+            var options: KingfisherOptionsInfo = [
+                .onFailureImage(placeholder)
+            ]
             
             if let x = size {
                 options.append( .processor( DownsamplingImageProcessor(size: x) ) )
